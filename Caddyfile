@@ -1,0 +1,7 @@
+:{$PORT:8080} {
+	root * /srv
+	encode zstd gzip
+	@media path *.mp4 *.webp
+	header @media Cache-Control "public, max-age=604800"
+	file_server
+}
