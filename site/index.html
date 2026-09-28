@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rewind NYC — Karaoke, Cocktails &amp; Private Events in Long Island City</title>
+<meta name="description" content="Redesign concept for Rewind NYC: a cocktail lounge and eight themed private karaoke rooms in Long Island City, with private events and buyouts for up to 100 guests.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b0706">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+TC:wght@500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/poster-lounge.webp">
+<link rel="preload" as="image" href="assets/img/poster-ktv.webp">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="is-loading">
+
+<div class="loader" aria-hidden="true">
+  <div class="loader__mark">
+    <span class="loader__zh">倒帶</span>
+    <span class="loader__word">Rewind</span>
+    <span class="loader__bar"><i></i></span>
+  </div>
+</div>
+
+<header class="nav" id="top">
+  <nav class="nav__row" aria-label="Primary">
+    <div class="nav__links">
+      <a href="#story">Our Story</a>
+      <a href="#lounge">Lounge</a>
+      <a href="#karaoke">Karaoke</a>
+      <a href="#events">Private Events</a>
+    </div>
+    <a class="nav__logo" href="#top" aria-label="Rewind home">
+      <svg viewBox="0 0 64 32" aria-hidden="true"><path d="M8 24c10 0 14-16 24-16s10 16 20 16-8-22-18-8S14 30 8 24z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <span>Rewind</span>
+    </a>
+    <div class="nav__cta">
+      <a href="#events" class="nav__inquire">Inquire</a>
+      <button class="btn btn--red btn--sm" data-open="reserve">Reserve</button>
+      <button class="nav__burger" aria-label="Menu" aria-expanded="false" data-burger><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="nav__sheet" data-sheet hidden>
+    <a href="#story">Our Story</a><a href="#lounge">Lounge</a><a href="#karaoke">Karaoke</a><a href="#events">Private Events</a><a href="#faq">FAQ</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO: the dual concept ============ -->
+<section class="hero" aria-label="Lounge and Karaoke">
+  <a class="hero__panel" data-side="lounge" href="#lounge">
+    <video muted loop playsinline preload="auto" poster="assets/img/poster-lounge.webp">
+      <source src="assets/video/lounge.mp4" type="video/mp4">
+    </video>
+    <div class="hero__shade"></div>
+    <div class="hero__copy">
+      <span class="hero__zh" aria-hidden="true">酒廊</span>
+      <span class="eyebrow eyebrow--amber">Cocktails · Dining</span>
+      <h2 class="hero__title">The Lounge</h2>
+      <p>Craft cocktails and Asian small plates beneath hand-carved Tang and Song dynasty poetry.</p>
+      <span class="hero__go">Reserve a table <i>→</i></span>
+    </div>
+  </a>
+  <a class="hero__panel" data-side="karaoke" href="#karaoke">
+    <video muted loop playsinline preload="auto" poster="assets/img/poster-ktv.webp">
+      <source src="assets/video/ktv.mp4" type="video/mp4">
+    </video>
+    <div class="hero__shade"></div>
+    <div class="hero__copy">
+      <span class="hero__zh" aria-hidden="true">卡拉OK</span>
+      <span class="eyebrow eyebrow--red">Eight private rooms</span>
+      <h2 class="hero__title">Karaoke</h2>
+      <p>Down the red corridor: themed rooms from a recording studio to a 1990s Hong Kong cinema parlor.</p>
+      <span class="hero__go">Book a room <i>→</i></span>
+    </div>
+  </a>
+  <h1 class="hero__h1">Long Island City's cocktail lounge &amp; private karaoke</h1>
+  <a class="hero__events" href="#events">
+    <span>Planning a private event or corporate buyout? Up to 100 guests.</span>
+    <span class="hero__events-go">Start an inquiry →</span>
+  </a>
+</section>
+
+<!-- ============ STORY ============ -->
+<section class="story" id="story">
+  <div class="wrap story__grid">
+    <div class="story__media reveal">
+      <video muted loop playsinline preload="none" poster="assets/img/poster-intro.webp" data-lazy-video>
+        <source data-src="assets/video/intro.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="story__copy reveal">
+      <span class="eyebrow eyebrow--amber">How you get in</span>
+      <h2 class="h-display">Press <em>rewind</em>.</h2>
+      <p class="lede">An unmarked staircase on Davis Street leads down to a storage room of nostalgic relics. At its center sits a 1980s boombox. Press the button marked REWIND and a concealed door opens.</p>
+      <p>Behind it is a cocktail lounge anchored by Asian artwork, traditional instruments and hand-carved murals. Beyond the lounge, large wooden doors open onto a red corridor of karaoke rooms, each one a different moment in music.</p>
+      <figure class="story__still">
+        <img src="assets/img/boombox.webp" alt="The vintage boombox that opens Rewind's hidden door, in a red-lit speakeasy storage room" loading="lazy" width="1600" height="1067">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOUNGE ============ -->
+<section class="lounge" id="lounge">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="eyebrow eyebrow--amber">The Lounge</span>
+        <h2 class="h-display">A cocktail bar that <em>remembers</em>.</h2>
+      </div>
+      <p>Familiar Asian flavors, reworked. Walk-ins welcome; reserve for groups of up to six.</p>
+    </div>
+    <div class="lounge__grid">
+      <figure class="lounge__hero reveal">
+        <img src="assets/img/lounge-bar.webp" alt="Rewind's cocktail lounge bar in Long Island City, lit by paper globe pendants" loading="lazy" width="1600" height="1068">
+      </figure>
+      <figure class="lounge__drink reveal">
+        <img src="assets/img/cocktail-moonlit.webp" alt="Moonlit Aroma, a signature Rewind cocktail" loading="lazy" width="1200" height="1798">
+        <figcaption>Moonlit Aroma</figcaption>
+      </figure>
+      <div class="lounge__people reveal">
+        <article class="person">
+          <img src="assets/img/ken-chen.webp" alt="Ken Chen, Beverage Director at Rewind" loading="lazy" width="681" height="915">
+          <div>
+            <span class="eyebrow">Beverage Director</span>
+            <h3>Ken Chen</h3>
+            <p>Relocated from Taiwan after time at several of Asia's 50 Best Bars. Builds drinks from tea, coffee and seasonal fruit.</p>
+          </div>
+        </article>
+        <article class="person">
+          <img src="assets/img/alexander-lee.webp" alt="Chef Alexander Lee, Rewind's chef partner" loading="lazy" width="850" height="1100">
+          <div>
+            <span class="eyebrow">Chef Partner</span>
+            <h3>Alexander Lee</h3>
+            <p>French Culinary Institute, then Michelin-starred kitchens. Taiwanese street food and izakaya plates made to share.</p>
+          </div>
+        </article>
+      </div>
+      <a class="lounge__sips reveal" href="#faq">
+        <img src="assets/img/between-sips.webp" alt="Tea being measured for Between Sips, Rewind's weekly tea cocktail series" loading="lazy" width="1067" height="1600">
+        <div>
+          <span class="eyebrow eyebrow--jade">Every Monday</span>
+          <h3>Between Sips</h3>
+          <p>A weekly tea-cocktail session curated by Ken Chen.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KARAOKE ============ -->
+<section class="karaoke" id="karaoke">
+  <div class="karaoke__band" aria-hidden="true">
+    <img src="assets/img/mics-red.webp" alt="" loading="lazy">
+  </div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="eyebrow eyebrow--red">Private Karaoke Rooms</span>
+        <h2 class="h-display">Eight rooms. <em>Pick your era.</em></h2>
+      </div>
+      <p>Every room is private, with pro sound, a full song library, and table service from the lounge. Three sizes, from 8 to 30 guests.</p>
+    </div>
+
+    <div class="rooms">
+      <article class="room reveal">
+        <figure><img src="assets/img/room-vinyl.webp" alt="Party karaoke room lined with vintage Mandopop vinyl records" loading="lazy" width="1068" height="1600"></figure>
+        <div class="room__meta"><div><span class="room__size">Party · 20–30</span><h3>The Record Room</h3><p>Floor-to-ceiling LPs from the early 2000s Mandopop era.</p></div><span class="room__rate">from $160/hr</span></div>
+      </article>
+      <article class="room reveal">
+        <figure><img src="assets/img/room-cinema.webp" alt="Small karaoke room styled after a 1990s Hong Kong cinema parlor with a neon city window" loading="lazy" width="1200" height="801"></figure>
+        <div class="room__meta"><div><span class="room__size">Small · up to 8</span><h3>Hong Kong Parlor</h3><p>A homage to 90s Hong Kong cinema.</p></div><span class="room__rate">from $60/hr</span></div>
+      </article>
+      <article class="room reveal">
+        <figure><img src="assets/img/room-studio.webp" alt="Small karaoke room inspired by a recording studio with acoustic panels" loading="lazy" width="1200" height="801"></figure>
+        <div class="room__meta"><div><span class="room__size">Small · up to 8</span><h3>The Studio</h3><p>Speaker-ceiling installations and acoustic walls.</p></div><span class="room__rate">from $60/hr</span></div>
+      </article>
+      <article class="room reveal">
+        <figure><img src="assets/img/room-mural.webp" alt="Small karaoke room with a carved wooden Chinese character mural" loading="lazy" width="1200" height="801"></figure>
+        <div class="room__meta"><div><span class="room__size">Small · up to 8</span><h3>The Poem Room</h3><p>Carved characters and warm gold light.</p></div><span class="room__rate">from $60/hr</span></div>
+      </article>
+      <article class="room reveal">
+        <figure><img src="assets/img/room-arcade.webp" alt="Large karaoke room with a checkerboard floor and neon lighting for up to 22 guests" loading="lazy" width="1200" height="801"></figure>
+        <div class="room__meta"><div><span class="room__size">Large · 8–22</span><h3>Neon Arcade</h3><p>Checker floors, pink neon, room to dance.</p></div><span class="room__rate">from $100/hr</span></div>
+      </article>
+      <article class="room room--wide reveal">
+        <figure><img src="assets/img/room-gallery.webp" alt="Large karaoke room with long banquettes and amber cove lighting" loading="lazy" width="1600" height="1067"></figure>
+        <div class="room__meta"><div><span class="room__size">Large · 8–22</span><h3>The Gallery</h3><p>Long banquettes and amber cove light for bigger crews.</p></div><span class="room__rate">from $100/hr</span></div>
+      </article>
+    </div>
+    <p class="rooms__note">Room names are placeholders for the demo; six of eight rooms shown.</p>
+
+    <!-- rates -->
+    <div class="rates reveal" id="rates">
+      <div class="rates__head">
+        <h3 class="h-sub">Room rates</h3>
+        <p>Rates are per room. Friday and Saturday after 10pm is a flat minimum spend for the night.</p>
+      </div>
+      <div class="rates__cards">
+        <article class="rate">
+          <header><h4>Small</h4><span>up to 8</span></header>
+          <dl>
+            <div><dt>Mon–Thu</dt><dd>$60<small>/hr</small></dd></div>
+            <div><dt>Fri–Sat, before 10pm</dt><dd>$60<small>/hr</small></dd></div>
+            <div class="is-peak"><dt>Fri–Sat, 10pm–4am</dt><dd>$388<small> min</small></dd></div>
+            <div><dt>Sunday</dt><dd>$60<small>/hr</small></dd></div>
+          </dl>
+        </article>
+        <article class="rate">
+          <header><h4>Large</h4><span>8–22</span></header>
+          <dl>
+            <div><dt>Mon–Thu</dt><dd>$100<small>/hr</small></dd></div>
+            <div><dt>Fri–Sat, before 10pm</dt><dd>$100<small>/hr</small></dd></div>
+            <div class="is-peak"><dt>Fri–Sat, 10pm–4am</dt><dd>$888<small> min</small></dd></div>
+            <div><dt>Sunday</dt><dd>$100<small>/hr</small></dd></div>
+          </dl>
+        </article>
+        <article class="rate">
+          <header><h4>Party</h4><span>20–30</span></header>
+          <dl>
+            <div><dt>Mon–Thu</dt><dd>$160<small>/hr</small></dd></div>
+            <div><dt>Fri–Sat, before 10pm</dt><dd>$160<small>/hr</small></dd></div>
+            <div class="is-peak"><dt>Fri–Sat, 10pm–4am</dt><dd>$1,388<small> min</small></dd></div>
+            <div><dt>Sunday</dt><dd>$160<small>/hr</small></dd></div>
+          </dl>
+        </article>
+      </div>
+      <div class="rates__foot">
+        <ul class="addons">
+          <li>Golden Ossetra caviar <b>+$138/oz</b></li>
+          <li>Birthday decorations <b>+$88</b></li>
+          <li>Cake plating <b>+$25/cake</b></li>
+        </ul>
+        <button class="btn btn--red" data-open="reserve">Book a room</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRIVATE EVENTS ============ -->
+<section class="events" id="events">
+  <div class="events__bg" aria-hidden="true"><img src="assets/img/event-room.webp" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <div class="events__intro reveal">
+      <span class="eyebrow eyebrow--jade">Private Events &amp; Buyouts</span>
+      <h2 class="h-display">Take the whole <em>night</em>.</h2>
+      <p class="lede">Corporate parties, launches, birthdays and brand activations. Book one room, the event room, or the entire venue: lounge, corridor and all eight karaoke rooms.</p>
+    </div>
+
+    <div class="spaces reveal">
+      <article class="space">
+        <span class="space__cap">30</span>
+        <div><h3>Small Event Room</h3><p>An intimate private space for birthdays and nights with your closest crew.</p></div>
+      </article>
+      <article class="space">
+        <span class="space__cap">70</span>
+        <div><h3>Large Event Room</h3><p>Expansive screens, immersive sound and a flexible layout for presentations and parties.</p></div>
+      </article>
+      <article class="space">
+        <span class="space__cap">100</span>
+        <div><h3>The Lounge</h3><p>The full cocktail bar and dining floor, or combine everything for a complete buyout.</p></div>
+      </article>
+    </div>
+
+    <div class="events__grid">
+      <aside class="events__facts reveal">
+        <dl>
+          <div><dt>Minimum</dt><dd>2 hours</dd></div>
+          <div><dt>Deposit</dt><dd>50% on signing</dd></div>
+          <div><dt>Menu</dt><dd>Custom food &amp; drink, buffet or cocktail-hour formats</dd></div>
+          <div><dt>Reply</dt><dd>Within one business day</dd></div>
+        </dl>
+        <p class="fine">Pricing excludes sales tax and a 20% service charge.</p>
+      </aside>
+
+      <form class="form reveal" id="eventForm" novalidate>
+        <div class="form__head">
+          <h3 class="h-sub">Your event details</h3>
+          <p>Send the basics and our events team will be in touch to build your night.</p>
+        </div>
+        <div class="form__grid">
+          <div class="field"><label for="ev-name">Name</label><input id="ev-name" name="name" autocomplete="name" required placeholder="Jordan Lee"></div>
+          <div class="field"><label for="ev-email">Email</label><input id="ev-email" name="email" type="email" autocomplete="email" required placeholder="jordan@company.com"></div>
+          <div class="field"><label for="ev-phone">Phone</label><input id="ev-phone" name="phone" type="tel" autocomplete="tel" placeholder="(917) 555-0100"></div>
+          <div class="field"><label for="ev-guests">Number of guests</label><input id="ev-guests" name="guests" type="number" min="1" max="100" inputmode="numeric" required placeholder="45"></div>
+          <div class="field"><label for="ev-start">Event date</label><input id="ev-start" name="startDate" type="date" required></div>
+          <div class="field"><label for="ev-end">End date <span>(multi-day only)</span></label><input id="ev-end" name="endDate" type="date"></div>
+          <div class="field"><label for="ev-t1">Start time</label><input id="ev-t1" name="startTime" type="time" required></div>
+          <div class="field"><label for="ev-t2">End time</label><input id="ev-t2" name="endTime" type="time" required></div>
+          <div class="field"><label for="ev-space">Space</label>
+            <select id="ev-space" name="space">
+              <option value="">Not sure yet</option>
+              <option>Small Event Room · up to 30</option>
+              <option>Large Event Room · up to 70</option>
+              <option>The Lounge · up to 100</option>
+              <option>Full venue buyout</option>
+            </select>
+          </div>
+          <div class="field"><label for="ev-type">Event type</label>
+            <select id="ev-type" name="eventType" required>
+              <option value="">Select one</option>
+              <option>Corporate party</option>
+              <option>Birthday / anniversary</option>
+              <option>Wedding / engagement party / baby shower</option>
+              <option>Fundraiser / product launch</option>
+              <option>Movie night</option>
+              <option>Photo / film shoot</option>
+              <option>Sporting event</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field field--full"><label for="ev-notes">Notes</label><textarea id="ev-notes" name="notes" rows="3" placeholder="Occasion, budget, catering, AV needs…"></textarea></div>
+        </div>
+        <div class="form__foot">
+          <p class="form__status" role="status" aria-live="polite"></p>
+          <button class="btn btn--jade" type="submit"><span>Send request</span></button>
+        </div>
+        <div class="form__done" hidden>
+          <span class="form__done-zh" aria-hidden="true">收到</span>
+          <h3 class="h-sub">Request received.</h3>
+          <p>Thanks — the Rewind events team will reply within one business day. (Demo: nothing was actually sent.)</p>
+          <button type="button" class="btn btn--ghost btn--sm" data-reset>Send another</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRESS ============ -->
+<section class="press" aria-label="Press">
+  <div class="press__track">
+    <span>NBC New York</span><i>✦</i><span>Eater NY</span><i>✦</i><span>DiningOut</span><i>✦</i><span>The Strong Buzz</span><i>✦</i><span>Of All Places NYC</span><i>✦</i><span>World Journal 世界日報</span><i>✦</i>
+    <span>NBC New York</span><i>✦</i><span>Eater NY</span><i>✦</i><span>DiningOut</span><i>✦</i><span>The Strong Buzz</span><i>✦</i><span>Of All Places NYC</span><i>✦</i><span>World Journal 世界日報</span><i>✦</i>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="wrap faq__grid">
+    <div class="reveal">
+      <span class="eyebrow eyebrow--amber">Good to know</span>
+      <h2 class="h-display">Questions.</h2>
+      <div class="hours">
+        <h3 class="eyebrow">Hours</h3>
+        <dl>
+          <div><dt>Mon, Wed, Thu</dt><dd>6pm – 1am</dd></div>
+          <div><dt>Fri, Sat</dt><dd>6pm – 4am*</dd></div>
+          <div><dt>Sunday</dt><dd>4pm – 1am</dd></div>
+          <div><dt>Tuesday</dt><dd>Closed</dd></div>
+        </dl>
+        <p class="fine">*Lounge closes at 2am on Friday and Saturday. Karaoke runs until 4am.</p>
+      </div>
+    </div>
+    <div class="faq__list reveal">
+      <details open><summary>How long can I book a private event for?</summary><p>A buyout generally requires a minimum of 2 hours. Karaoke rooms are booked by the hour, with a flat minimum on Friday and Saturday nights after 10pm.</p></details>
+      <details><summary>Can I customize the menu or the experience?</summary><p>Yes. The team can customize the food and drinks menu on request, and can do buffet-style or cocktail-hour formats in place of a sit-down dinner.</p></details>
+      <details><summary>What's the deposit policy?</summary><p>A 50% deposit is due on contract signing.</p></details>
+      <details><summary>What's the gratuity policy?</summary><p>All pricing quoted excludes sales tax and a 20% service charge.</p></details>
+      <details><summary>Can we bring a cake?</summary><p>Yes — cake plating is $25 per cake, and birthday decorations can be added for $88.</p></details>
+      <details><summary>What if I don't see a room or duration I want?</summary><p>Use the contact form below and the team will look at availability for you directly.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div class="foot__brand">
+      <span class="foot__zh" aria-hidden="true">倒帶</span>
+      <span class="foot__word">Rewind</span>
+      <p>Karaoke &amp; cocktail lounge<br>Long Island City, New York</p>
+    </div>
+    <div>
+      <h4 class="eyebrow">Visit</h4>
+      <p>45-57 Davis Street, Cellar<br>Long Island City, NY 11101</p>
+      <a class="link" href="https://maps.app.goo.gl/fAmK5pbZouv72J6L7" target="_blank" rel="noopener">Directions →</a>
+    </div>
+    <div>
+      <h4 class="eyebrow">Contact</h4>
+      <p>+1 917 558 8000<br>info@rewindnyc.com</p>
+      <button class="link" data-open="contact">Send us a message →</button>
+    </div>
+    <div>
+      <h4 class="eyebrow">Follow</h4>
+      <p><a class="link" href="https://www.instagram.com/rewind_nyc/" target="_blank" rel="noopener">Instagram</a><br><a class="link" href="https://www.xiaohongshu.com/user/profile/6882ce43000000001b022b3a" target="_blank" rel="noopener">RedNote 小红书</a></p>
+    </div>
+  </div>
+  <div class="wrap foot__bar">
+    <span>© Rewind NYC · Karaoke &amp; Lounge · Long Island City</span>
+    <a class="credit" href="https://mander.tech" target="_blank" rel="noopener">site by mander.tech</a>
+  </div>
+</footer>
+
+<!-- ============ MANDER SIGN-OFF ============ -->
+<section class="mander" id="mander" aria-label="Contact Mander">
+  <div class="wrap mander__grid">
+    <div>
+      <span class="mander__tag">Concept by Mander</span>
+      <h2>Like where this is going?</h2>
+      <p>This is a redesign concept prepared for Rewind NYC. It isn't affiliated with or published by Rewind. Send us a note and we'll walk you through the full build.</p>
+      <p class="mander__mail">sales@mander.tech</p>
+    </div>
+    <form class="mander__form" id="manderForm" novalidate>
+      <div class="field"><label for="m-name">Name</label><input id="m-name" name="name" autocomplete="name" required></div>
+      <div class="field"><label for="m-email">Email</label><input id="m-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field field--full"><label for="m-msg">Message</label><textarea id="m-msg" name="message" rows="3">Hey Mander team — we loved the Rewind redesign concept. Can we talk about getting the final version built?</textarea></div>
+      <div class="form__foot">
+        <p class="form__status" role="status" aria-live="polite"></p>
+        <button class="btn btn--paper" type="submit"><span>Send to Mander</span></button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ RESERVE DRAWER ============ -->
+<div class="drawer" id="reserve" role="dialog" aria-modal="true" aria-labelledby="reserve-title" hidden>
+  <div class="drawer__scrim" data-close></div>
+  <div class="drawer__panel">
+    <div class="drawer__top">
+      <span class="eyebrow eyebrow--red" id="reserve-step">Step 1 of 3</span>
+      <button class="drawer__x" data-close aria-label="Close">×</button>
+    </div>
+    <h2 id="reserve-title" class="h-sub">Reserve at Rewind</h2>
+
+    <div class="step" data-step="1">
+      <p class="drawer__lead">What kind of night?</p>
+      <div class="choices">
+        <button class="choice" data-choice="Lounge &amp; Dining" data-guests="1–6"><img src="assets/img/lounge-mural.webp" alt="" loading="lazy"><span><b>Lounge &amp; Dining</b><small>1–6 guests</small></span></button>
+        <button class="choice" data-choice="Small Karaoke Room" data-guests="1–8"><img src="assets/img/room-cinema.webp" alt="" loading="lazy"><span><b>Small Karaoke Room</b><small>1–8 guests · from $60/hr</small></span></button>
+        <button class="choice" data-choice="Large Karaoke Room" data-guests="8–22"><img src="assets/img/room-arcade.webp" alt="" loading="lazy"><span><b>Large Karaoke Room</b><small>8–22 guests · from $100/hr</small></span></button>
+        <button class="choice" data-choice="Party Karaoke Room" data-guests="20–30"><img src="assets/img/room-vinyl.webp" alt="" loading="lazy"><span><b>Party Karaoke Room</b><small>20–30 guests · from $160/hr</small></span></button>
+      </div>
+    </div>
+
+    <div class="step" data-step="2" hidden>
+      <p class="drawer__lead"><span data-picked></span></p>
+      <div class="form__grid">
+        <div class="field"><label for="r-date">Date</label><input id="r-date" type="date"></div>
+        <div class="field"><label for="r-size">Party size</label><input id="r-size" type="number" min="1" max="30" value="4"></div>
+        <div class="field field--full"><label for="r-time">Arrival</label>
+          <select id="r-time"><option>6:00 pm</option><option>7:00 pm</option><option selected>8:00 pm</option><option>9:00 pm</option><option>10:00 pm</option><option>11:00 pm</option></select>
+        </div>
+      </div>
+      <p class="drawer__hint" data-hint></p>
+      <div class="drawer__nav">
+        <button class="btn btn--ghost btn--sm" data-back>Back</button>
+        <button class="btn btn--red" data-next>Check availability</button>
+      </div>
+    </div>
+
+    <div class="step" data-step="3" hidden>
+      <div class="summary" data-summary></div>
+      <p class="drawer__lead">Live availability and payment are handled securely by SevenRooms.</p>
+      <div class="drawer__nav">
+        <button class="btn btn--ghost btn--sm" data-back>Back</button>
+        <a class="btn btn--red" data-sevenrooms href="https://www.sevenrooms.com/explore/rewindnyc/reservations/create/search/" target="_blank" rel="noopener">Continue to SevenRooms →</a>
+      </div>
+    </div>
+
+    <a class="drawer__events" href="#events" data-close>Planning something bigger? <b>Inquire about a private event →</b></a>
+  </div>
+</div>
+
+<!-- ============ CONTACT DRAWER (replaces mailto) ============ -->
+<div class="drawer" id="contact" role="dialog" aria-modal="true" aria-labelledby="contact-title" hidden>
+  <div class="drawer__scrim" data-close></div>
+  <div class="drawer__panel">
+    <div class="drawer__top">
+      <span class="eyebrow eyebrow--amber">Contact</span>
+      <button class="drawer__x" data-close aria-label="Close">×</button>
+    </div>
+    <h2 id="contact-title" class="h-sub">Send Rewind a message</h2>
+    <form class="form form--plain" id="contactForm" novalidate>
+      <div class="form__grid">
+        <div class="field"><label for="c-name">Name</label><input id="c-name" name="name" required></div>
+        <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" required></div>
+        <div class="field field--full"><label for="c-topic">What's this about?</label>
+          <select id="c-topic"><option>General question</option><option>Private event</option><option>Reservation help</option><option>Press</option></select>
+        </div>
+        <div class="field field--full"><label for="c-msg">Message</label><textarea id="c-msg" rows="4" required></textarea></div>
+      </div>
+      <div class="form__foot">
+        <p class="form__status" role="status" aria-live="polite"></p>
+        <button class="btn btn--red" type="submit"><span>Send message</span></button>
+      </div>
+      <p class="fine">Prefer email? info@rewindnyc.com</p>
+    </form>
+  </div>
+</div>
+
+<script src="main.js" defer></script>
+</body>
+</html>
