@@ -53,7 +53,7 @@ code{font:400 13px var(--f-m);background:#efe6d8;padding:1px 5px}
 
   <section>
     <h2>What changed in the concept</h2>
-    <p class="sub">Seven things we found on the live site, and how the concept handles each.</p>
+    <p class="sub">Eight things we found on the live site, and how the concept handles each.</p>
 
     <div class="fix"><span class="n">01</span><h3>Reservations</h3>
       <p class="b">"Reservations" opens an unstyled SevenRooms list. The private-event link is small text at the bottom.</p>
@@ -73,13 +73,17 @@ code{font:400 13px var(--f-m);background:#efe6d8;padding:1px 5px}
 
     <div class="fix"><span class="n">05</span><h3>Speed and motion</h3>
       <p class="b">No loading state and no motion. Hero videos are 540p, which is soft on any modern screen.</p>
-      <p class="a">A short branded loader and one orchestrated hero entrance. Rewind's own footage is AI-upscaled to 1080p, and video plays only when on screen, which keeps the page light.</p></div>
+      <p class="a">A short loader built on Rewind's own logo animation, and one orchestrated hero entrance. Rewind's own footage is AI-upscaled to 1080p, and video plays only when on screen, which keeps the page light.</p></div>
 
     <div class="fix"><span class="n">06</span><h3>Private events and buyouts</h3>
       <p class="b">The highest-value lead is only reachable by digging into the reservation popup.</p>
       <p class="a">It's on the first screen, and it has its own cinematic section with the three spaces (30 / 70 / 100 guests), the key terms, and the existing inquiry form restyled with validation and a clear confirmation.</p></div>
 
-    <div class="fix"><span class="n">07</span><h3>Layout</h3>
+    <div class="fix"><span class="n">07</span><h3>Menu</h3>
+      <p class="b">"Menu" opens a Canva document outside the site, and rewindnyc.com/menu returns a 404. The dish photos on the Lounge page have no names.</p>
+      <p class="a">An on-page Food &amp; Drink section. Guests pick one of the Five Elements to see its cocktail, and swipe through named dishes. It links to the full menu.</p></div>
+
+    <div class="fix"><span class="n">08</span><h3>Layout</h3>
       <p class="b">Every section is a centered heading over a narrow column of text, repeated down the page.</p>
       <p class="a">Editorial grids that alternate full-bleed images with quieter type sections, set in Bodoni with Chinese characters used as texture, not decoration.</p></div>
   </section>
@@ -114,7 +118,8 @@ code{font:400 13px var(--f-m);background:#efe6d8;padding:1px 5px}
         <li>Clean H1/H2 structure on Karaoke and Lounge (headings are mostly generic today: "The Vision", "Karaoke Rooms")</li>
         <li>Alt text on every photo. Many images on the live site have empty alt text.</li>
         <li>A unique title and meta description per page, written for click-through</li>
-        <li>Internal links between Karaoke, Private Events and the menu</li></ul></div>
+        <li>Internal links between Karaoke, Private Events and the menu</li>
+        <li>Publish the menu as a real page instead of a Canva link. Search engines can't read it today, and dish names like "wagyu don" and "egg sando" are things people search for near Long Island City.</li></ul></div>
       <div class="card"><h3>Structured data &amp; local</h3><ul>
         <li>Extend the existing BarOrPub schema with event capacity, price range and room types</li>
         <li><code>FAQPage</code> schema on the FAQ (the answers already exist)</li>

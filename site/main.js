@@ -7,19 +7,23 @@ const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* ---------- loader: wait for hero posters, never longer than 1.6s ---------- */
+/* ---------- loader: logo mark draws in while hero posters load (1.1s min, 2.2s max) ---------- */
 (() => {
   const bar = $(".loader__bar i");
   const imgs = $$(".hero video").map(v => v.poster).filter(Boolean);
+  const t0 = performance.now();
   let done = 0;
   const finish = () => {
     if (!document.body.classList.contains("is-loading")) return;
     document.body.classList.remove("is-loading");
     requestAnimationFrame(() => document.body.classList.add("is-ready"));
   };
-  const tick = () => { done++; bar.style.setProperty("--p", done / imgs.length); if (done >= imgs.length) setTimeout(finish, 350); };
+  const tick = () => {
+    done++; bar.style.setProperty("--p", done / imgs.length);
+    if (done >= imgs.length) setTimeout(finish, Math.max(250, 1100 - (performance.now() - t0)));
+  };
   imgs.forEach(src => { const i = new Image(); i.onload = i.onerror = tick; i.src = src; });
-  setTimeout(finish, 1600);
+  setTimeout(finish, 2200);
 })();
 
 /* ---------- nav ---------- */
@@ -203,3 +207,83 @@ mf.addEventListener("submit", async e => {
     status(mf, `Couldn't send. Email ${SALES_EMAIL} directly.`, "error");
   } finally { busy(btn, false); }
 });
+
+/* ---------- Five Elements cocktail tabs ---------- */
+(() => {
+  const tabs = $$(".elements__tabs [role=tab]"), stage = $("#el-stage");
+  if (!tabs.length) return;
+  const img = $("[data-el-img]", stage);
+  let warm = false;
+  const preload = () => { if (warm) return; warm = true; tabs.forEach(t => { new Image().src = t.dataset.img; }); };
+  const select = (t, focus) => {
+    if (t.getAttribute("aria-selected") === "true") return;
+    tabs.forEach(x => { const on = x === t; x.setAttribute("aria-selected", on); x.tabIndex = on ? 0 : -1; });
+    if (focus) t.focus();
+    stage.setAttribute("aria-labelledby", t.id);
+    stage.classList.add("is-swapping");
+    setTimeout(() => {
+      img.src = t.dataset.img;
+      img.alt = `${t.dataset.name}, a ${t.dataset.el} (${t.dataset.flavor.toLowerCase()}) cocktail at Rewind`;
+      $("[data-el-cn]", stage).textContent = t.dataset.cn;
+      $("[data-el-meta]", stage).textContent = `${t.dataset.el} · ${t.dataset.flavor}`;
+      $("[data-el-name]", stage).textContent = t.dataset.name;
+      const show = () => stage.classList.remove("is-swapping");
+      img.complete ? show() : (img.onload = show);
+    }, reduce ? 0 : 260);
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener("click", () => select(t));
+    t.addEventListener("pointerenter", preload, { once: true });
+    t.addEventListener("keydown", e => {
+      const d = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+      if (d) { e.preventDefault(); select(tabs[(i + d + tabs.length) % tabs.length], true); }
+    });
+  });
+  new IntersectionObserver((es, o) => { if (es[0].isIntersecting) { preload(); o.disconnect(); } }, { rootMargin: "400px" }).observe(stage);
+})();
+
+/* ---------- dish rail ---------- */
+(() => {
+  const track = $("[data-rail-track]"); if (!track) return;
+  const btns = $$("[data-rail]");
+  const step = () => (track.firstElementChild?.getBoundingClientRect().width || 280) * 2;
+  const sync = () => {
+    btns[0].disabled = track.scrollLeft < 8;
+    btns[1].disabled = track.scrollLeft + track.clientWidth > track.scrollWidth - 8;
+  };
+  btns.forEach(b => b.addEventListener("click", () => track.scrollBy({ left: step() * +b.dataset.rail, behavior: reduce ? "auto" : "smooth" })));
+  track.addEventListener("scroll", sync, { passive: true }); addEventListener("resize", sync); sync();
+})();
+
+/* ---------- rooms open the booking drawer preselected ---------- */
+$$(".room").forEach(room => {
+  const btn = $(".room__book", room); if (!btn) return;
+  const book = () => { openDrawer("reserve"); pick($(`.choice[data-choice="${btn.dataset.book}"]`)); };
+  btn.addEventListener("click", book);
+  $("figure", room).addEventListener("click", book);
+});
+
+/* ---------- mobile dock: after the hero, hidden over forms and footer ---------- */
+(() => {
+  const dock = $("[data-dock]"); if (!dock) return;
+  const state = { pastHero: false, blocked: new Set() };
+  const render = () => {
+    const on = state.pastHero && state.blocked.size === 0;
+    dock.classList.toggle("is-on", on);
+    dock.setAttribute("aria-hidden", !on);
+    $$("a,button", dock).forEach(el => (el.tabIndex = on ? 0 : -1));
+  };
+  new IntersectionObserver(([e]) => { state.pastHero = !e.isIntersecting && e.boundingClientRect.top < 0; render(); }).observe($(".hero"));
+  const bo = new IntersectionObserver(es => { es.forEach(e => e.isIntersecting ? state.blocked.add(e.target) : state.blocked.delete(e.target)); render(); });
+  ["#eventForm", ".foot", ".mander"].forEach(sel => { const el = $(sel); el && bo.observe(el); });
+})();
+
+/* ---------- nav: highlight the section in view ---------- */
+(() => {
+  const links = $$(".nav__links a");
+  const map = new Map(links.map(a => [a.getAttribute("href").slice(1), a]));
+  const so = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { links.forEach(a => a.classList.remove("is-active")); map.get(e.target.id)?.classList.add("is-active"); }
+  }), { rootMargin: "-45% 0px -50% 0px" });
+  map.forEach((_, id) => { const el = document.getElementById(id); el && so.observe(el); });
+})();

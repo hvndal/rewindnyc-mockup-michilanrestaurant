@@ -9,7 +9,8 @@
 <meta name="theme-color" content="#0b0706">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+TC:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500&text=%E9%87%91%E6%9C%A8%E6%B0%B4%E7%81%AB%E5%9C%9F&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/poster-lounge.webp">
 <link rel="preload" as="image" href="assets/img/poster-ktv.webp">
 <link rel="stylesheet" href="styles.css">
@@ -18,8 +19,11 @@
 
 <div class="loader" aria-hidden="true">
   <div class="loader__mark">
-    <span class="loader__zh">倒帶</span>
-    <span class="loader__word">Rewind</span>
+    <video class="loader__loop" autoplay muted playsinline>
+      <source src="assets/video/logo-loop.mp4" type='video/mp4; codecs="hvc1"'>
+      <source src="assets/video/logo-loop.webm" type="video/webm">
+    </video>
+    <img class="loader__word" src="assets/img/rewind-wordmark.webp" alt="" width="800" height="155">
     <span class="loader__bar"><i></i></span>
   </div>
 </div>
@@ -29,21 +33,21 @@
     <div class="nav__links">
       <a href="#story">Our Story</a>
       <a href="#lounge">Lounge</a>
+      <a href="#menu">Menu</a>
       <a href="#karaoke">Karaoke</a>
       <a href="#events">Private Events</a>
     </div>
     <a class="nav__logo" href="#top" aria-label="Rewind home">
-      <svg viewBox="0 0 64 32" aria-hidden="true"><path d="M8 24c10 0 14-16 24-16s10 16 20 16-8-22-18-8S14 30 8 24z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
-      <span>Rewind</span>
+      <img src="assets/img/rewind-wordmark.webp" alt="Rewind" width="800" height="155">
     </a>
     <div class="nav__cta">
       <a href="#events" class="nav__inquire">Inquire</a>
       <button class="btn btn--red btn--sm" data-open="reserve">Reserve</button>
-      <button class="nav__burger" aria-label="Menu" aria-expanded="false" data-burger><span></span><span></span></button>
+      <button class="nav__burger" aria-label="Open navigation" aria-expanded="false" data-burger><span></span><span></span></button>
     </div>
   </nav>
   <div class="nav__sheet" data-sheet hidden>
-    <a href="#story">Our Story</a><a href="#lounge">Lounge</a><a href="#karaoke">Karaoke</a><a href="#events">Private Events</a><a href="#faq">FAQ</a>
+    <a href="#story">Our Story</a><a href="#lounge">Lounge</a><a href="#menu">Menu</a><a href="#karaoke">Karaoke</a><a href="#events">Private Events</a><a href="#faq">FAQ</a>
   </div>
 </header>
 
@@ -57,7 +61,6 @@
     </video>
     <div class="hero__shade"></div>
     <div class="hero__copy">
-      <span class="hero__zh" aria-hidden="true">酒廊</span>
       <span class="eyebrow eyebrow--amber">Cocktails · Dining</span>
       <h2 class="hero__title">The Lounge</h2>
       <p>Craft cocktails and Asian small plates beneath hand-carved Tang and Song dynasty poetry.</p>
@@ -70,7 +73,6 @@
     </video>
     <div class="hero__shade"></div>
     <div class="hero__copy">
-      <span class="hero__zh" aria-hidden="true">卡拉OK</span>
       <span class="eyebrow eyebrow--red">Eight private rooms</span>
       <h2 class="hero__title">Karaoke</h2>
       <p>Down the red corridor: themed rooms from a recording studio to a 1990s Hong Kong cinema parlor.</p>
@@ -119,8 +121,8 @@
         <img src="assets/img/lounge-bar.webp" alt="Rewind's cocktail lounge bar in Long Island City, lit by paper globe pendants" loading="lazy" width="1600" height="1068">
       </figure>
       <figure class="lounge__drink reveal">
-        <img src="assets/img/cocktail-moonlit.webp" alt="Moonlit Aroma, a signature Rewind cocktail" loading="lazy" width="1200" height="1798">
-        <figcaption>Moonlit Aroma</figcaption>
+        <img src="assets/img/lounge-mural.webp" alt="Marble tables and red lamps beneath the hand-carved poetry mural in Rewind's lounge" loading="lazy" width="880" height="1100">
+        <figcaption>The poetry wall</figcaption>
       </figure>
       <div class="lounge__people reveal">
         <article class="person">
@@ -140,14 +142,84 @@
           </div>
         </article>
       </div>
-      <a class="lounge__sips reveal" href="#faq">
+      <article class="lounge__sips reveal">
         <img src="assets/img/between-sips.webp" alt="Tea being measured for Between Sips, Rewind's weekly tea cocktail series" loading="lazy" width="1067" height="1600">
         <div>
           <span class="eyebrow eyebrow--jade">Every Monday</span>
           <h3>Between Sips</h3>
-          <p>A weekly tea-cocktail session curated by Ken Chen.</p>
+          <p>A weekly tea-cocktail session curated by Ken Chen, built around single-origin teas and the cocktails they inspire.</p>
         </div>
-      </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOD & DRINK ============ -->
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="eyebrow eyebrow--amber">Food &amp; Drink</span>
+        <h2 class="h-display">Five elements. <em>One more round.</em></h2>
+      </div>
+      <p>The cocktail menu follows the Chinese Zodiac and the Five Elements. Each element is a flavor, and each list runs from light to bold. Explore by taste, or start with your sign.</p>
+    </div>
+
+    <div class="elements reveal">
+      <div class="elements__pick">
+      <span class="elements__hint">Pick an element to see its cocktail</span>
+      <div class="elements__tabs" role="tablist" aria-label="The Five Elements">
+        <button role="tab" id="tab-metal" aria-selected="true" aria-controls="el-stage" data-name="Round Table" data-el="Metal" data-flavor="Spicy" data-cn="金" data-img="assets/img/ck-round-table.webp">
+          <img src="assets/img/el-metal.webp" alt="" width="128" height="128"><span class="el__cn">金</span><span class="el__name">Metal</span><span class="el__flav">Spicy</span>
+        </button>
+        <button role="tab" id="tab-wood" aria-selected="false" tabindex="-1" aria-controls="el-stage" data-name="Past Lives" data-el="Wood" data-flavor="Tangy" data-cn="木" data-img="assets/img/ck-past-lives.webp">
+          <img src="assets/img/el-wood.webp" alt="" width="128" height="128"><span class="el__cn">木</span><span class="el__name">Wood</span><span class="el__flav">Tangy</span>
+        </button>
+        <button role="tab" id="tab-water" aria-selected="false" tabindex="-1" aria-controls="el-stage" data-name="Spring Caress" data-el="Water" data-flavor="Savory" data-cn="水" data-img="assets/img/ck-spring-caress.webp">
+          <img src="assets/img/el-water.webp" alt="" width="128" height="128"><span class="el__cn">水</span><span class="el__name">Water</span><span class="el__flav">Savory</span>
+        </button>
+        <button role="tab" id="tab-fire" aria-selected="false" tabindex="-1" aria-controls="el-stage" data-name="Night Roast" data-el="Fire" data-flavor="Bitter" data-cn="火" data-img="assets/img/ck-night-roast.webp">
+          <img src="assets/img/el-fire.webp" alt="" width="128" height="128"><span class="el__cn">火</span><span class="el__name">Fire</span><span class="el__flav">Bitter</span>
+        </button>
+        <button role="tab" id="tab-earth" aria-selected="false" tabindex="-1" aria-controls="el-stage" data-name="Moonlit Aroma" data-el="Earth" data-flavor="Sweet" data-cn="土" data-img="assets/img/ck-moonlit-aroma.webp">
+          <img src="assets/img/el-earth.webp" alt="" width="128" height="128"><span class="el__cn">土</span><span class="el__name">Earth</span><span class="el__flav">Sweet</span>
+        </button>
+      </div>
+      </div>
+      <figure class="elements__stage" id="el-stage" role="tabpanel" aria-labelledby="tab-metal">
+        <img src="assets/img/ck-round-table.webp" alt="Round Table, a Metal (spicy) cocktail at Rewind" width="880" height="1100" loading="lazy" data-el-img>
+        <figcaption>
+          <span class="el__cn el__cn--big" data-el-cn>金</span>
+          <span><span class="eyebrow eyebrow--amber" data-el-meta>Metal · Spicy</span><b data-el-name>Round Table</b></span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="kitchen">
+      <div class="kitchen__head reveal">
+        <div>
+          <span class="eyebrow eyebrow--red">The Kitchen</span>
+          <h3 class="h-sub">Asian comfort food, <em>rewound</em>.</h3>
+          <p>Taiwanese street food, Japanese izakaya favorites and Korean influences, reworked by Chef Alexander Lee to go with the cocktails.</p>
+        </div>
+        <div class="kitchen__ctrl">
+          <a class="link" href="https://canva.link/6eozygaj6pezjhj" target="_blank" rel="noopener">Full menu →</a>
+          <button class="rail-btn" data-rail="-1" aria-label="Previous dishes">←</button>
+          <button class="rail-btn" data-rail="1" aria-label="More dishes">→</button>
+        </div>
+      </div>
+      <ul class="rail" data-rail-track>
+        <li class="dish"><img src="assets/img/dish-toro-uni-caviar.webp" alt="Toro, uni and caviar at Rewind" loading="lazy" width="720" height="900"><span>Toro, Uni &amp; Caviar</span></li>
+        <li class="dish"><img src="assets/img/dish-fish-balls.webp" alt="Fish balls in broth" loading="lazy" width="720" height="900"><span>Fish Balls</span></li>
+        <li class="dish"><img src="assets/img/dish-wagyu-don.webp" alt="Wagyu don with a soft egg" loading="lazy" width="720" height="900"><span>Wagyu Don</span></li>
+        <li class="dish"><img src="assets/img/dish-wings.webp" alt="Salt and pepper chicken wings" loading="lazy" width="720" height="900"><span>Salt &amp; Pepper Wings</span></li>
+        <li class="dish"><img src="assets/img/dish-egg-sando.webp" alt="Egg sando on a black marble plate" loading="lazy" width="720" height="900"><span>Egg Sando</span></li>
+        <li class="dish"><img src="assets/img/dish-jjajang-bucatini.webp" alt="Jjajang bucatini with scallions" loading="lazy" width="720" height="900"><span>Jjajang Bucatini</span></li>
+        <li class="dish"><img src="assets/img/dish-claypot.webp" alt="Claypot with braised meat, egg and greens" loading="lazy" width="720" height="900"><span>Claypot</span></li>
+        <li class="dish"><img src="assets/img/dish-chawanmushi.webp" alt="Chawanmushi topped with ikura" loading="lazy" width="720" height="900"><span>Chawanmushi</span></li>
+        <li class="dish"><img src="assets/img/dish-scallion-pancake.webp" alt="Hummus with scallion pancake" loading="lazy" width="720" height="900"><span>Hummus &amp; Scallion Pancake</span></li>
+        <li class="dish"><img src="assets/img/dish-rice-balls.webp" alt="Rice balls in a red sauce" loading="lazy" width="720" height="900"><span>Rice Balls</span></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -169,27 +241,27 @@
     <div class="rooms">
       <article class="room reveal">
         <figure><img src="assets/img/room-vinyl.webp" alt="Party karaoke room lined with vintage Mandopop vinyl records" loading="lazy" width="1068" height="1600"></figure>
-        <div class="room__meta"><div><span class="room__size">Party · 20–30</span><h3>The Record Room</h3><p>Floor-to-ceiling LPs from the early 2000s Mandopop era.</p></div><span class="room__rate">from $160/hr</span></div>
+        <div class="room__meta"><div><span class="room__size">Party · 20–30</span><h3>The Record Room</h3><p>Floor-to-ceiling LPs from the early 2000s Mandopop era.</p></div><span class="room__side"><span class="room__rate">from $160/hr</span><button class="room__book" data-book="Party Karaoke Room">Book <i>→</i></button></span></div>
       </article>
       <article class="room reveal">
         <figure><img src="assets/img/room-cinema.webp" alt="Small karaoke room styled after a 1990s Hong Kong cinema parlor with a neon city window" loading="lazy" width="1200" height="801"></figure>
-        <div class="room__meta"><div><span class="room__size">Small · up to 8</span><h3>Hong Kong Parlor</h3><p>A homage to 90s Hong Kong cinema.</p></div><span class="room__rate">from $60/hr</span></div>
+        <div class="room__meta"><div><span class="room__size">Small · up to 8</span><h3>Hong Kong Parlor</h3><p>A homage to 90s Hong Kong cinema.</p></div><span class="room__side"><span class="room__rate">from $60/hr</span><button class="room__book" data-book="Small Karaoke Room">Book <i>→</i></button></span></div>
       </article>
       <article class="room reveal">
         <figure><img src="assets/img/room-studio.webp" alt="Small karaoke room inspired by a recording studio with acoustic panels" loading="lazy" width="1200" height="801"></figure>
-        <div class="room__meta"><div><span class="room__size">Small · up to 8</span><h3>The Studio</h3><p>Speaker-ceiling installations and acoustic walls.</p></div><span class="room__rate">from $60/hr</span></div>
+        <div class="room__meta"><div><span class="room__size">Small · up to 8</span><h3>The Studio</h3><p>Speaker-ceiling installations and acoustic walls.</p></div><span class="room__side"><span class="room__rate">from $60/hr</span><button class="room__book" data-book="Small Karaoke Room">Book <i>→</i></button></span></div>
       </article>
       <article class="room reveal">
         <figure><img src="assets/img/room-mural.webp" alt="Small karaoke room with a carved wooden Chinese character mural" loading="lazy" width="1200" height="801"></figure>
-        <div class="room__meta"><div><span class="room__size">Small · up to 8</span><h3>The Poem Room</h3><p>Carved characters and warm gold light.</p></div><span class="room__rate">from $60/hr</span></div>
+        <div class="room__meta"><div><span class="room__size">Small · up to 8</span><h3>The Poem Room</h3><p>Carved characters and warm gold light.</p></div><span class="room__side"><span class="room__rate">from $60/hr</span><button class="room__book" data-book="Small Karaoke Room">Book <i>→</i></button></span></div>
       </article>
       <article class="room reveal">
         <figure><img src="assets/img/room-arcade.webp" alt="Large karaoke room with a checkerboard floor and neon lighting for up to 22 guests" loading="lazy" width="1200" height="801"></figure>
-        <div class="room__meta"><div><span class="room__size">Large · 8–22</span><h3>Neon Arcade</h3><p>Checker floors, pink neon, room to dance.</p></div><span class="room__rate">from $100/hr</span></div>
+        <div class="room__meta"><div><span class="room__size">Large · 8–22</span><h3>Neon Arcade</h3><p>Checker floors, pink neon, room to dance.</p></div><span class="room__side"><span class="room__rate">from $100/hr</span><button class="room__book" data-book="Large Karaoke Room">Book <i>→</i></button></span></div>
       </article>
       <article class="room room--wide reveal">
         <figure><img src="assets/img/room-gallery.webp" alt="Large karaoke room with long banquettes and amber cove lighting" loading="lazy" width="1600" height="1067"></figure>
-        <div class="room__meta"><div><span class="room__size">Large · 8–22</span><h3>The Gallery</h3><p>Long banquettes and amber cove light for bigger crews.</p></div><span class="room__rate">from $100/hr</span></div>
+        <div class="room__meta"><div><span class="room__size">Large · 8–22</span><h3>The Gallery</h3><p>Long banquettes and amber cove light for bigger crews.</p></div><span class="room__side"><span class="room__rate">from $100/hr</span><button class="room__book" data-book="Large Karaoke Room">Book <i>→</i></button></span></div>
       </article>
     </div>
     <p class="rooms__note">Room names are placeholders for the demo; six of eight rooms shown.</p>
@@ -320,7 +392,7 @@
           <button class="btn btn--jade" type="submit"><span>Send request</span></button>
         </div>
         <div class="form__done" hidden>
-          <span class="form__done-zh" aria-hidden="true">收到</span>
+          <svg class="form__done-mark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M15 24.5l6 6 12-13" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
           <h3 class="h-sub">Request received.</h3>
           <p>Thanks — the Rewind events team will reply within one business day. (Demo: nothing was actually sent.)</p>
           <button type="button" class="btn btn--ghost btn--sm" data-reset>Send another</button>
@@ -372,8 +444,7 @@
 <footer class="foot">
   <div class="wrap foot__grid">
     <div class="foot__brand">
-      <span class="foot__zh" aria-hidden="true">倒帶</span>
-      <span class="foot__word">Rewind</span>
+      <img class="foot__word" src="assets/img/rewind-wordmark.webp" alt="Rewind" width="800" height="155" loading="lazy">
       <p>Karaoke &amp; cocktail lounge<br>Long Island City, New York</p>
     </div>
     <div>
@@ -492,6 +563,11 @@
       <p class="fine">Prefer email? info@rewindnyc.com</p>
     </form>
   </div>
+</div>
+
+<div class="dock" data-dock aria-hidden="true">
+  <button class="btn btn--red" data-open="reserve" tabindex="-1">Reserve</button>
+  <a class="btn btn--ghost" href="#events" tabindex="-1">Private event</a>
 </div>
 
 <script src="main.js" defer></script>
