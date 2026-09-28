@@ -37,6 +37,12 @@ burger.addEventListener("click", () => {
 });
 $$("a", sheet).forEach(a => a.addEventListener("click", () => { sheet.hidden = true; burger.setAttribute("aria-expanded", "false"); }));
 
+/* ---------- hero: 1440p clips on large or high-density screens ---------- */
+if (innerWidth * (devicePixelRatio || 1) > 1800 && innerWidth > 900) {
+  $$(".hero__bg source").forEach(s => { s.src = s.getAttribute("src").replace(/(lounge|ktv)\.mp4$/, "$1-1440.mp4"); });
+  $$(".hero__bg").forEach(v => v.load());
+}
+
 /* ---------- video: only play what's on screen ---------- */
 const vio = new IntersectionObserver(entries => {
   entries.forEach(({ target: v, isIntersecting }) => {
