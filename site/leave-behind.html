@@ -9,150 +9,240 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#16100e;--muted:#6b5f58;--line:#e2d8c9;--paper:#f7f1e7;--red:#b8321f;--jade:#2f7d58;
-  --f-d:'Cormorant Garamond',Georgia,serif;--f-b:'Josefin Sans',Futura,'Century Gothic',sans-serif;--f-m:'Josefin Sans',Futura,sans-serif;color-scheme:light}
+:root{--ink:#16100e;--muted:#6b5f58;--line:#e2d8c9;--paper:#f7f1e7;--card:#fbf7f0;--red:#b8321f;--jade:#2f7d58;
+  --f-d:'Cormorant Garamond',Georgia,serif;--f-b:'Josefin Sans',Futura,'Century Gothic',sans-serif;color-scheme:light}
 *{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.65 var(--f-b);-webkit-font-smoothing:antialiased}
-.wrap{max-width:900px;margin:0 auto;padding:clamp(48px,8vw,96px) clamp(18px,5vw,40px) 80px}
-.tag{font:500 11px/1 var(--f-m);letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
-h1{font:400 clamp(40px,6vw,68px)/1 var(--f-d);letter-spacing:-.02em;margin:18px 0 20px;text-wrap:balance}
-h1 em{font-style:italic;color:var(--red)}
-h2{font:400 clamp(26px,3.2vw,34px)/1.1 var(--f-d);margin:0 0 8px}
-.lede{font-size:19px;max-width:60ch;color:#3a302b}
-section{margin-top:72px;padding-top:28px;border-top:1px solid var(--ink)}
-.sub{color:var(--muted);margin:0 0 24px;max-width:62ch}
-.fix{display:grid;grid-template-columns:2.2em 1fr 1fr;gap:6px 24px;padding:18px 0;border-top:1px solid var(--line)}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16.5px/1.65 var(--f-b);-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:clamp(48px,8vw,96px) clamp(18px,5vw,40px) 80px}
+.tag{font:600 11px/1 var(--f-b);letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+h1{font:italic 400 clamp(42px,6vw,72px)/1 var(--f-d);letter-spacing:-.01em;margin:18px 0 22px;text-wrap:balance}
+h1 em{color:var(--red)}
+h2{font:italic 400 clamp(30px,3.6vw,40px)/1.1 var(--f-d);margin:0 0 10px}
+h3{margin:0}
+.lede{font-size:19px;max-width:62ch;color:#3a302b}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-block;padding:13px 20px;font:600 11.5px/1 var(--f-b);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink)}
+.btn--solid{background:var(--ink);color:var(--paper)}
+.note{margin-top:26px;padding:14px 16px;border:1px solid var(--ink);font-size:14.5px}
+section{margin-top:80px;padding-top:30px;border-top:1px solid var(--ink)}
+.sub{color:var(--muted);margin:0 0 26px;max-width:64ch}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:8px}
+.stat{background:var(--card);padding:20px 18px}
+.stat b{display:block;font:italic 500 44px/1 var(--f-d);color:var(--red)}
+.stat span{display:block;margin-top:10px;font-size:13.5px;color:#4a403a;line-height:1.45}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:18px 36px}
+.why p{margin:0;color:#3a302b}
+.why h3{font:600 15px/1.3 var(--f-b);margin-bottom:6px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{border:1px solid var(--line);padding:20px 22px;background:var(--card)}
+.card h3{font:600 11px/1 var(--f-b);letter-spacing:.18em;text-transform:uppercase;margin:0 0 12px;color:var(--red)}
+.card p,.card li{font-size:14.5px;color:#4a403a}
+ul{padding-left:1.1em;margin:0}
+li{margin:8px 0}
+li b,p b{font-weight:600;color:var(--ink)}
+.ba{margin-top:34px}
+.ba h3{font:600 15px/1.3 var(--f-b);margin-bottom:12px}
+.ba__pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ba figure{margin:0}
+.ba figure img{border:1px solid var(--line)}
+.ba figcaption{margin-top:8px;font-size:13.5px;color:#4a403a}
+.ba figcaption::before{display:block;font:600 10px/1.8 var(--f-b);letter-spacing:.18em;text-transform:uppercase}
+.ba .b figcaption::before{content:"Today";color:var(--muted)}
+.ba .a figcaption::before{content:"In the concept";color:var(--jade)}
+.fix{display:grid;grid-template-columns:2.2em 1fr 1fr;gap:6px 24px;padding:16px 0;border-top:1px solid var(--line)}
 .fix:first-of-type{border-top:0}
-.fix .n{font:400 13px var(--f-m);color:var(--muted);padding-top:3px}
-.fix h3{grid-column:2/-1;font:600 16px/1.3 var(--f-b);margin:0}
-.fix .b,.fix .a{font-size:14.5px;color:#4a403a}
-.fix .b::before,.fix .a::before{display:block;font:500 10px/1.8 var(--f-m);letter-spacing:.16em;text-transform:uppercase}
+.fix .n{font:400 13px var(--f-b);color:var(--muted);padding-top:3px}
+.fix h3{grid-column:2/-1;font:600 15.5px/1.3 var(--f-b)}
+.fix .b,.fix .a{font-size:14.5px;color:#4a403a;margin:0}
+.fix .b::before,.fix .a::before{display:block;font:600 10px/1.8 var(--f-b);letter-spacing:.18em;text-transform:uppercase}
 .fix .b::before{content:"Today";color:var(--muted)}
 .fix .a::before{content:"In the concept";color:var(--jade)}
 .fix .b{grid-column:2}
-ul{padding-left:1.1em;margin:0}
-li{margin:8px 0}
-li b{font-weight:600}
-.terms{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px;padding:0;list-style:none}
-.terms li{margin:0;font:400 13px var(--f-m);padding:7px 12px;border:1px solid var(--ink)}
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-.card{border:1px solid var(--line);padding:20px 22px;background:#fbf7f0}
-.card h3{font:500 11px/1 var(--f-m);letter-spacing:.16em;text-transform:uppercase;margin:0 0 12px;color:var(--red)}
-.card p,.card li{font-size:14.5px;color:#4a403a}
-code{font:400 13px var(--f-m);background:#efe6d8;padding:1px 5px}
-.note{font-size:13.5px;color:var(--muted);margin-top:18px}
-.foot{margin-top:80px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font:400 12px var(--f-m);color:var(--muted)}
-@media (max-width:680px){.fix{grid-template-columns:1fr}.fix h3,.fix .b,.fix .a{grid-column:1}.fix .n{display:none}.cols{grid-template-columns:1fr}}
+.terms{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px;padding:0;list-style:none}
+.terms li{margin:0;font:400 13.5px var(--f-b);padding:8px 12px 6px;border:1px solid var(--ink)}
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.phase{background:var(--card);padding:20px 20px 22px}
+.phase .when{font:600 10.5px/1 var(--f-b);letter-spacing:.18em;text-transform:uppercase;color:var(--jade)}
+.phase h3{font:italic 500 24px/1.1 var(--f-d);margin:10px 0 8px}
+.phase li{font-size:14px;color:#4a403a}
+.cta{background:var(--ink);color:var(--paper);padding:clamp(28px,4vw,44px);margin-top:80px}
+.cta h2{color:var(--paper)}
+.cta p{color:rgba(247,241,231,.78);max-width:60ch}
+.cta .btn{border-color:var(--paper);color:var(--paper);margin-top:18px}
+.cta .btn--solid{background:var(--paper);color:var(--ink)}
+.creds{margin-top:22px;padding-top:18px;border-top:1px solid rgba(247,241,231,.2);font-size:14.5px;color:rgba(247,241,231,.85)}
+.foot{margin-top:40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;color:var(--muted)}
+@media (max-width:760px){
+  .stats{grid-template-columns:1fr 1fr}
+  .why,.cols,.phases,.ba__pair{grid-template-columns:1fr}
+  .fix{grid-template-columns:1fr}.fix h3,.fix .b,.fix .a{grid-column:1}.fix .n{display:none}
+}
 </style>
 </head>
 <body>
 <main class="wrap">
+
   <span class="tag">Mander × Rewind NYC · Redesign brief</span>
-  <h1>Rewind is already premium in person. The site should be <em>too</em>.</h1>
-  <p class="lede">Rewind has the room, the story, the team and the booking infrastructure. The concept keeps all of it — the dark palette, the wordmark, the boombox door, one era per room, SevenRooms, the inquiry form — and fixes how it's presented.</p>
-
-  <p class="note" style="margin-top:22px;padding:14px 16px;border:1px solid var(--ink);color:var(--ink)"><b>About the demo:</b> it's a visual redesign concept built with Rewind's own photos, video, fonts and logo animations. The forms are for show and don't send anything. SEO isn't built into the demo; it's described at the end of this brief.</p>
+  <h1>Rewind is premium in person. Online, it doesn't look it <em>yet</em>.</h1>
+  <p class="lede">Rewind has a press-covered room, a bar program from Asia's 50 Best alumni, a Michelin-trained chef and eight private karaoke rooms. The website is how most guests and event planners meet all of that first, and right now it's slow, hard to find on Google, and makes the most valuable bookings hard to start.</p>
+  <div class="links">
+    <a class="btn btn--solid" href="./">Open the live concept</a>
+    <a class="btn" href="#seo">Jump to the SEO plan</a>
+  </div>
+  <p class="note"><b>About the demo:</b> it's a visual redesign concept built only from Rewind's own photos, video, fonts, logo animations, rates and menu. The forms are for show and don't send anything. SEO isn't built into the demo; the plan is below.</p>
 
   <section>
-    <h2>What's holding the current site back</h2>
-    <p class="sub">Measured on rewindnyc.com in September 2026. None of this is visible from the front, but it costs speed, search rankings and leads.</p>
-    <div class="cols">
-      <div class="card"><h3>Speed</h3><ul>
-        <li><b>The Karaoke page is 3 MB of HTML.</b> 2.7 MB of that is photos embedded directly in the page code as base64. Browsers can't cache them or load them lazily, so the whole page is slow to appear. The Lounge page is 1.75 MB and Private Events 1.1 MB, for the same reason.</li>
-        <li><b>The videos are 540p.</b> That's soft on laptops and desktop monitors, and they're cropped into half-screen panels, which makes them softer still.</li></ul></div>
-      <div class="card"><h3>Search</h3><ul>
-        <li><b>No page has an H1 heading.</b> It's the main signal search engines use for what a page is about.</li>
-        <li><b>Every page shares the same title</b>: "REWIND NYC — Karaoke &amp; Lounge · Long Island City." Karaoke, Lounge and Private Events can't rank for different searches.</li>
-        <li><b>Images have empty alt text:</b> all 20 on the Karaoke page, 36 of 54 on the Lounge page.</li>
-        <li><b>The menu is a Canva link</b>, and rewindnyc.com/menu returns a 404.</li></ul></div>
-      <div class="card"><h3>Conversion</h3><ul>
-        <li>"Reservations" opens an unstyled SevenRooms list, and the private-event link is small text at the bottom.</li>
-        <li>"Email Us" is a mailto link, which does nothing on phones or work laptops without a mail app.</li>
-        <li>The Karaoke page has no route to book or inquire from the room photos themselves.</li></ul></div>
-      <div class="card"><h3>Why a visual overhaul, not a patch</h3>
-        <p>Fixing these means rebuilding how pages are put together: real image files, proper headings, per-page titles and a real menu page. Doing that inside the current layout would preserve the thing that makes the site feel generic. Rebuilding lets us fix the plumbing and bring the design up to the level of the venue in one pass.</p></div>
+    <h2>What we found</h2>
+    <p class="sub">Measured on rewindnyc.com in September 2026.</p>
+    <div class="stats">
+      <div class="stat"><b>3 MB</b><span>Karaoke page HTML: 2.7 MB of it is photos pasted into the code</span></div>
+      <div class="stat"><b>0</b><span>H1 headings across Home, Karaoke, Lounge and Private Events</span></div>
+      <div class="stat"><b>1</b><span>title shared by every page, so no page can rank on its own</span></div>
+      <div class="stat"><b>0/20</b><span>Karaoke page images with alt text</span></div>
     </div>
   </section>
 
   <section>
-    <h2>What changed in the concept</h2>
-    <p class="sub">Eight things we found on the live site, and how the concept handles each.</p>
-
-    <div class="fix"><span class="n">01</span><h3>Reservations</h3>
-      <p class="b">"Reservations" opens an unstyled SevenRooms list. The private-event link is small text at the bottom.</p>
-      <p class="a">A branded three-step drawer: pick the experience, choose date and party size, then continue to SevenRooms with it prefilled. "Planning something bigger?" is on every step.</p></div>
-
-    <div class="fix"><span class="n">02</span><h3>"Email Us"</h3>
-      <p class="b">A mailto link. It does nothing on phones and work laptops without a mail app, and leaves no structured lead.</p>
-      <p class="a">A short on-page contact form with a topic picker. The address stays visible as plain text for anyone who prefers email.</p></div>
-
-    <div class="fix"><span class="n">03</span><h3>Room grid</h3>
-      <p class="b">Six photos with mismatched color and crops, labels stamped on the image, and copy that promises eight rooms.</p>
-      <p class="a">One crop system and grade, a name and mood line per room, capacity and a starting rate on every card.</p></div>
-
-    <div class="fix"><span class="n">04</span><h3>Rates</h3>
-      <p class="b">A dense table that reads like a policy PDF.</p>
-      <p class="a">Three cards, one per room size, with the late-night weekend minimum called out. Add-ons sit underneath with a Book button.</p></div>
-
-    <div class="fix"><span class="n">05</span><h3>Speed and motion</h3>
-      <p class="b">No loading state and no motion. Hero videos are 540p, which is soft on any modern screen.</p>
-      <p class="a">A short loader built on Rewind's own logo animation, and one orchestrated hero entrance. Rewind's own footage is AI-upscaled to 1080p, and video plays only when on screen, which keeps the page light.</p></div>
-
-    <div class="fix"><span class="n">06</span><h3>Private events and buyouts</h3>
-      <p class="b">The highest-value lead is only reachable by digging into the reservation popup.</p>
-      <p class="a">It's on the first screen, and it has its own cinematic section with the three spaces (30 / 70 / 100 guests), the key terms, and the existing inquiry form restyled with validation and a clear confirmation.</p></div>
-
-    <div class="fix"><span class="n">07</span><h3>Menu</h3>
-      <p class="b">"Menu" opens a Canva document outside the site, and rewindnyc.com/menu returns a 404. The dish photos on the Lounge page have no names.</p>
-      <p class="a">An on-page Food &amp; Drink section. Guests pick one of the Five Elements to see its cocktail, and swipe through named dishes. It links to the full menu.</p></div>
-
-    <div class="fix"><span class="n">08</span><h3>Layout</h3>
-      <p class="b">Every section is a centered heading over a narrow column of text, repeated down the page.</p>
-      <p class="a">Editorial grids that alternate full-bleed images with quieter type sections, set in Rewind's own Josefin Sans with a serif italic for accents.</p></div>
-  </section>
-
-  <section>
-    <h2>What we'd do in the full build</h2>
-    <p class="sub">The concept is one page. The engagement rolls the system across the site.</p>
-    <div class="cols">
-      <div class="card"><h3>Design &amp; build</h3><ul>
-        <li>Home, Lounge, Karaoke, Private Events, Our Story, Menu, Events, FAQ and Press on one design system</li>
-        <li>Room pages with galleries and "book this room"</li>
-        <li>Events calendar for Between Sips and ticketed nights</li>
-        <li>Mobile-first, with an accessibility pass (contrast, keyboard, screen reader)</li></ul></div>
-      <div class="card"><h3>Media &amp; performance</h3><ul>
-        <li>A photo and video pass, or upscaling and regrading of the existing library</li>
-        <li>Responsive images, lazy loading, short muted loops</li>
-        <li>SevenRooms widget themed to match the site</li>
-        <li>Inquiry form wired to the events inbox or CRM, with lead tracking</li></ul></div>
+    <h2>Why it's worth a redesign</h2>
+    <div class="why">
+      <div><h3>The site is the first room guests walk into</h3><p>Diners and planners decide from their phone before they ever find the unmarked staircase. Right now the page loads slowly and flashes a fallback font before the brand font arrives, and it doesn't feel like the venue Eater and NBC wrote about.</p></div>
+      <div><h3>Private events are the biggest checks, and the hardest to start</h3><p>Corporate planners shortlist venues online, often after hours. Today the inquiry path is a small link at the bottom of a reservations popup. A buyout lead deserves a front-door entrance.</p></div>
+      <div><h3>Google can't tell the pages apart</h3><p>With no H1s, one shared title and unlabeled images, Rewind is invisible for "private karaoke Long Island City" and "corporate event space LIC." Those are the searches that bring in events.</p></div>
+      <div><h3>A refresh, not a rebrand</h3><p>The identity is strong: the wordmark, Josefin Sans, the boombox door, the Five Elements, the koi and bird animations. We keep all of it and fix the layout, speed and structure around it, so the brand finally reads online the way it does in the room.</p></div>
     </div>
   </section>
 
   <section>
-    <h2>SEO recommendations</h2>
-    <p class="sub">Suggestions only. None of this is built into the demo; it's what we'd set up in the full build.</p>
+    <h2>Before and after</h2>
+    <p class="sub">Same content, same brand assets. Left is the live site today; right is the concept.</p>
+
+    <div class="ba"><h3>First impression</h3>
+      <div class="ba__pair">
+        <figure class="b"><img src="assets/brief/before-hero.webp" alt="Current Karaoke page header" loading="lazy" width="1200" height="750"><figcaption>A single photo with a small label, and the page's first heading is generic.</figcaption></figure>
+        <figure class="a"><img src="assets/brief/after-hero.webp" alt="Concept hero with Lounge and Karaoke panels" loading="lazy" width="1200" height="750"><figcaption>The dual concept up front: Lounge and Karaoke side by side with Rewind's own footage and loop animations, and a private-events bar on the first screen.</figcaption></figure>
+      </div></div>
+
+    <div class="ba"><h3>Rooms</h3>
+      <div class="ba__pair">
+        <figure class="b"><img src="assets/brief/before-rooms.webp" alt="Current karaoke room grid" loading="lazy" width="1200" height="750"><figcaption>Photos labelled only "Small / Up to 8", no names or prices, and no way to book from a room.</figcaption></figure>
+        <figure class="a"><img src="assets/brief/after-rooms.webp" alt="Concept room cards" loading="lazy" width="1200" height="750"><figcaption>Each room has a name, a mood line, capacity, a starting rate and a Book button that opens reservations with that room already picked.</figcaption></figure>
+      </div></div>
+
+    <div class="ba"><h3>Rates</h3>
+      <div class="ba__pair">
+        <figure class="b"><img src="assets/brief/before-rates.webp" alt="Current rates table" loading="lazy" width="1200" height="750"><figcaption>A dense table followed by a paragraph of italic fine print.</figcaption></figure>
+        <figure class="a"><img src="assets/brief/after-rates.webp" alt="Concept rate cards" loading="lazy" width="1200" height="750"><figcaption>One card per room size, with the late-night weekend minimum called out, and Book right underneath.</figcaption></figure>
+      </div></div>
+
+    <div class="ba"><h3>Reserving</h3>
+      <div class="ba__pair">
+        <figure class="b"><img src="assets/brief/before-reserve.webp" alt="Current reservations popup" loading="lazy" width="1200" height="750"><figcaption>A popup of four buttons that hands you straight to SevenRooms, with "Email us" opening a mail app.</figcaption></figure>
+        <figure class="a"><img src="assets/brief/after-reserve.webp" alt="Concept reservation drawer" loading="lazy" width="1200" height="750"><figcaption>A three-step drawer: pick the room, date and party size, see a summary, then continue to SevenRooms with it prefilled. It warns about Tuesdays and room capacity as you go.</figcaption></figure>
+      </div></div>
+
+    <div class="ba"><h3>Private-event inquiry</h3>
+      <div class="ba__pair">
+        <figure class="b"><img src="assets/brief/before-form.webp" alt="Current private events inquiry form" loading="lazy" width="1200" height="750"><figcaption>The form itself works. It lives on a separate page that's only reachable through the Events menu or the reservations popup.</figcaption></figure>
+        <figure class="a"><img src="assets/brief/after-form.webp" alt="Concept private events section with inquiry form" loading="lazy" width="1200" height="750"><figcaption>The same fields, now linked from the first screen and every reservation step, next to the terms planners ask about (2-hour minimum, 50% deposit, custom menus), with validation and a clear confirmation.</figcaption></figure>
+      </div></div>
+  </section>
+
+  <section>
+    <h2>What we audited and fixed in the demo</h2>
+    <div>
+      <div class="fix"><span class="n">01</span><h3>Speed</h3>
+        <p class="b">Photos are embedded as base64 in the page code (3 MB Karaoke page). Fonts sit behind seven chained stylesheet imports and ship as uncompressed TTF/OTF from a folder named "local-development".</p>
+        <p class="a">Real, compressed image files that load as you scroll. Video plays only when on screen. A short loader built on Rewind's own logo animation.</p></div>
+      <div class="fix"><span class="n">02</span><h3>Video</h3>
+        <p class="b">Hero clips are 540p, which is soft on any laptop.</p>
+        <p class="a">Rewind's own footage, AI-upscaled to 1080p (1440p for large screens), graded to match.</p></div>
+      <div class="fix"><span class="n">03</span><h3>Reservations</h3>
+        <p class="b">An unstyled button list, then straight to SevenRooms.</p>
+        <p class="a">A branded three-step drawer, with a Book button on every room card and a Reserve bar that stays on screen on phones.</p></div>
+      <div class="fix"><span class="n">04</span><h3>Private events</h3>
+        <p class="b">A small link at the bottom of the reservations popup.</p>
+        <p class="a">On the first screen, in every reservation step, and in its own section with the three spaces (30 / 70 / 100 guests) and the inquiry form.</p></div>
+      <div class="fix"><span class="n">05</span><h3>"Email Us"</h3>
+        <p class="b">A mailto link, which does nothing on phones or work laptops without a mail app.</p>
+        <p class="a">An on-page contact form with a topic picker.</p></div>
+      <div class="fix"><span class="n">06</span><h3>Menu</h3>
+        <p class="b">A Canva link; rewindnyc.com/menu is a 404; dish photos have no names.</p>
+        <p class="a">An on-page Food &amp; Drink section: pick one of the Five Elements to see its cocktail, and swipe through named dishes.</p></div>
+      <div class="fix"><span class="n">07</span><h3>Rooms and rates</h3>
+        <p class="b">Unnamed room photos and a dense rate table.</p>
+        <p class="a">Named rooms with mood, capacity and price; rate cards per size.</p></div>
+      <div class="fix"><span class="n">08</span><h3>Layout and type</h3>
+        <p class="b">Every section is a centered heading over a narrow column, repeated down the page.</p>
+        <p class="a">Editorial grids that alternate full-bleed photography with quieter type, set in Rewind's own Josefin Sans with a serif italic for accents.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>In the final build: reserving and inquiring, done properly</h2>
+    <div class="cols">
+      <div class="card"><h3>Reserve</h3><ul>
+        <li>SevenRooms embedded and styled to match the site, so guests never feel they've left</li>
+        <li>Room-level Book buttons that open the right room with date and party size carried over</li>
+        <li>A Reserve bar that stays on screen on phones, where most bookings start</li>
+        <li>Clear policy up front (Tuesdays closed, late-night minimums, deposit) so fewer bookings bounce</li></ul></div>
+      <div class="card"><h3>Private-event inquiry form</h3><ul>
+        <li>Wired to Rewind's events inbox or CRM, with an instant branded auto-reply</li>
+        <li>An optional budget field and "how did you hear about us" so the team can prioritize</li>
+        <li>An events PDF (spaces, packages, floor plans) sent with the auto-reply</li>
+        <li>Spam protection, plus tracking in the Google Analytics tag Rewind already has, so every lead is counted</li></ul></div>
+    </div>
+  </section>
+
+  <section id="seo">
+    <h2>The SEO plan</h2>
+    <p class="sub">We'd do this as part of the build. None of it is in the demo.</p>
     <ul class="terms">
       <li>private karaoke NYC</li><li>private karaoke Long Island City</li><li>corporate event space Long Island City</li>
-      <li>private event venue NYC</li><li>karaoke party NYC</li><li>karaoke room Queens</li>
+      <li>private event venue NYC</li><li>karaoke party NYC</li><li>karaoke room Queens</li><li>cocktail bar LIC</li>
     </ul>
-    <div class="cols">
-      <div class="card"><h3>On-page</h3><ul>
-        <li>A dedicated, indexable <code>/private-events</code> page with an H1 aimed at corporate buyouts in Long Island City</li>
-        <li>One H1 per page (there are none today), with a clean H2 structure under it</li>
-        <li>Descriptive alt text on every photo, starting with the rooms and dishes</li>
-        <li>A unique title and meta description per page (today all pages share one)</li>
-        <li>Internal links between Karaoke, Private Events and the menu</li>
-        <li>Publish the menu as a real page instead of a Canva link. Search engines can't read it today, and dish names like "wagyu don" and "egg sando" are things people search for near Long Island City.</li></ul></div>
-      <div class="card"><h3>Structured data &amp; local</h3><ul>
-        <li>Extend the existing BarOrPub schema with event capacity, price range and room types</li>
-        <li><code>FAQPage</code> schema on the FAQ (the answers already exist)</li>
-        <li><code>Event</code> schema for Between Sips and ticketed nights</li>
-        <li>Align the Google Business Profile: categories, event-space photos, Q&amp;A</li>
-        <li>Listings on Peerspace and Tagvenue, where corporate planners search</li></ul></div>
+    <div class="phases">
+      <div class="phase"><span class="when">Weeks 1–2</span><h3>Fix the foundations</h3><ul>
+        <li>Real image files, compressed and lazy-loaded</li>
+        <li>One H1 per page; a unique title and description per page</li>
+        <li>Alt text on every photo</li>
+        <li>Faster font loading (WOFF2, no chained imports)</li>
+        <li>Structured data: BarOrPub with capacity, FAQPage, Event</li></ul></div>
+      <div class="phase"><span class="when">Weeks 2–4</span><h3>Pages people search for</h3><ul>
+        <li>A dedicated Private Events page aimed at corporate buyouts in Long Island City</li>
+        <li>A real HTML menu (dish names like "wagyu don" and "egg sando" are searched)</li>
+        <li>A page per karaoke room</li>
+        <li>An FAQ built from the questions planners actually ask</li></ul></div>
+      <div class="phase"><span class="when">Ongoing</span><h3>Local presence</h3><ul>
+        <li>Google Business Profile: categories, event-space photos, Q&amp;A</li>
+        <li>Listings on Peerspace and Tagvenue, where corporate planners search</li>
+        <li>Links back from existing press (Eater, NBC, World Journal)</li>
+        <li>Short guides, such as "planning a corporate karaoke night in NYC," that link to the inquiry form</li></ul></div>
     </div>
-    <div class="card" style="margin-top:28px"><h3>Content</h3>
-      <p>Short, useful pages that match how planners search, for example "Corporate karaoke party in NYC: what to plan," "Team events in Long Island City" and "Birthday karaoke in Queens." Each links to the inquiry form. The existing press coverage (NBC New York, Eater NY, World Journal) also works as trust content and for backlinks.</p></div>
   </section>
+
+  <section>
+    <h2>Other suggestions</h2>
+    <div class="cols">
+      <div class="card"><h3>Reach</h3><ul>
+        <li><b>A Chinese-language page.</b> Rewind is already on RedNote and in World Journal; a page in Chinese serves that audience directly.</li>
+        <li><b>An events calendar</b> for Between Sips and special nights, with tickets or RSVPs.</li>
+        <li><b>Corporate packages</b> (e.g. "team night for 20," "full buyout") with starting prices, so planners can budget before they write.</li></ul></div>
+      <div class="card"><h3>Revenue &amp; operations</h3><ul>
+        <li><b>Gift cards</b> for karaoke hours and lounge tabs.</li>
+        <li><b>A monthly report</b> on leads, bookings and search traffic, so the site's value is measurable.</li>
+        <li><b>An accessibility pass</b> (contrast, keyboard, screen readers), which also helps SEO.</li></ul></div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <h2>Let's build the real one.</h2>
+    <p>The concept is a single page. The full engagement rolls it across Home, Lounge, Karaoke, Private Events, Menu, Our Story and FAQ, with reservations and inquiries wired up and the SEO plan in place.</p>
+    <p class="creds">Mander currently designs for Unapologetic Foods, the New York restaurant group behind Semma and Dhamaka, including their new Philadelphia opening.</p>
+    <a class="btn btn--solid" href="./#mander">Talk to us</a>
+    <a class="btn" href="./">Back to the concept</a>
+  </div>
 
   <div class="foot"><span>Prepared by Mander · mander.tech</span><span>sales@mander.tech</span></div>
 </main>
