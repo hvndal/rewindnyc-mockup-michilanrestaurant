@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#0b0706">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;1,300&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500&text=%E9%87%91%E6%9C%A8%E6%B0%B4%E7%81%AB%E5%9C%9F&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/poster-lounge.webp">
 <link rel="preload" as="image" href="assets/img/poster-ktv.webp">
@@ -56,10 +56,14 @@
 <!-- ============ HERO: the dual concept ============ -->
 <section class="hero" aria-label="Lounge and Karaoke">
   <a class="hero__panel" data-side="lounge" href="#lounge">
-    <video muted loop playsinline preload="auto" poster="assets/img/poster-lounge.webp">
+    <video class="hero__bg" muted loop playsinline preload="auto" poster="assets/img/poster-lounge.webp">
       <source src="assets/video/lounge.mp4" type="video/mp4">
     </video>
     <div class="hero__shade"></div>
+    <video class="hero__loop" autoplay muted loop playsinline aria-hidden="true">
+      <source src="assets/video/loop-lounge.mp4" type='video/mp4; codecs="hvc1"'>
+      <source src="assets/video/loop-lounge.webm" type="video/webm">
+    </video>
     <div class="hero__copy">
       <span class="eyebrow eyebrow--amber">Cocktails · Dining</span>
       <h2 class="hero__title">The Lounge</h2>
@@ -68,10 +72,14 @@
     </div>
   </a>
   <a class="hero__panel" data-side="karaoke" href="#karaoke">
-    <video muted loop playsinline preload="auto" poster="assets/img/poster-ktv.webp">
+    <video class="hero__bg" muted loop playsinline preload="auto" poster="assets/img/poster-ktv.webp">
       <source src="assets/video/ktv.mp4" type="video/mp4">
     </video>
     <div class="hero__shade"></div>
+    <video class="hero__loop" autoplay muted loop playsinline aria-hidden="true">
+      <source src="assets/video/loop-karaoke.mp4" type='video/mp4; codecs="hvc1"'>
+      <source src="assets/video/loop-karaoke.webm" type="video/webm">
+    </video>
     <div class="hero__copy">
       <span class="eyebrow eyebrow--red">Eight private rooms</span>
       <h2 class="hero__title">Karaoke</h2>
@@ -474,7 +482,8 @@
     <div>
       <span class="mander__tag">Concept by Mander</span>
       <h2>Like where this is going?</h2>
-      <p>This is a redesign concept prepared for Rewind NYC. It isn't affiliated with or published by Rewind. Send us a note and we'll walk you through the full build.</p>
+      <p>This is a visual redesign concept prepared for Rewind NYC. It isn't affiliated with or published by Rewind, and its forms don't send anything. What's wrong with the current site, and the SEO we'd do, is in the brief.</p>
+      <a class="mander__brief" href="leave-behind.html">Read the brief →</a>
       <p class="mander__mail">sales@mander.tech</p>
     </div>
     <form class="mander__form" id="manderForm" novalidate>

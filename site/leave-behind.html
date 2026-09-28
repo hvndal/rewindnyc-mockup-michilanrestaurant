@@ -7,10 +7,10 @@
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#16100e;--muted:#6b5f58;--line:#e2d8c9;--paper:#f7f1e7;--red:#b8321f;--jade:#2f7d58;
-  --f-d:'Bodoni Moda',Didot,Georgia,serif;--f-b:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;--f-m:'IBM Plex Mono',ui-monospace,monospace;color-scheme:light}
+  --f-d:'Cormorant Garamond',Georgia,serif;--f-b:'Josefin Sans',Futura,'Century Gothic',sans-serif;--f-m:'Josefin Sans',Futura,sans-serif;color-scheme:light}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.65 var(--f-b);-webkit-font-smoothing:antialiased}
 .wrap{max-width:900px;margin:0 auto;padding:clamp(48px,8vw,96px) clamp(18px,5vw,40px) 80px}
@@ -51,6 +51,29 @@ code{font:400 13px var(--f-m);background:#efe6d8;padding:1px 5px}
   <h1>Rewind is already premium in person. The site should be <em>too</em>.</h1>
   <p class="lede">Rewind has the room, the story, the team and the booking infrastructure. The concept keeps all of it — the dark palette, the wordmark, the boombox door, one era per room, SevenRooms, the inquiry form — and fixes how it's presented.</p>
 
+  <p class="note" style="margin-top:22px;padding:14px 16px;border:1px solid var(--ink);color:var(--ink)"><b>About the demo:</b> it's a visual redesign concept built with Rewind's own photos, video, fonts and logo animations. The forms are for show and don't send anything. SEO isn't built into the demo; it's described at the end of this brief.</p>
+
+  <section>
+    <h2>What's holding the current site back</h2>
+    <p class="sub">Measured on rewindnyc.com in September 2026. None of this is visible from the front, but it costs speed, search rankings and leads.</p>
+    <div class="cols">
+      <div class="card"><h3>Speed</h3><ul>
+        <li><b>The Karaoke page is 3 MB of HTML.</b> 2.7 MB of that is photos embedded directly in the page code as base64. Browsers can't cache them or load them lazily, so the whole page is slow to appear. The Lounge page is 1.75 MB and Private Events 1.1 MB, for the same reason.</li>
+        <li><b>The videos are 540p.</b> That's soft on laptops and desktop monitors, and they're cropped into half-screen panels, which makes them softer still.</li></ul></div>
+      <div class="card"><h3>Search</h3><ul>
+        <li><b>No page has an H1 heading.</b> It's the main signal search engines use for what a page is about.</li>
+        <li><b>Every page shares the same title</b>: "REWIND NYC — Karaoke &amp; Lounge · Long Island City." Karaoke, Lounge and Private Events can't rank for different searches.</li>
+        <li><b>Images have empty alt text:</b> all 20 on the Karaoke page, 36 of 54 on the Lounge page.</li>
+        <li><b>The menu is a Canva link</b>, and rewindnyc.com/menu returns a 404.</li></ul></div>
+      <div class="card"><h3>Conversion</h3><ul>
+        <li>"Reservations" opens an unstyled SevenRooms list, and the private-event link is small text at the bottom.</li>
+        <li>"Email Us" is a mailto link, which does nothing on phones or work laptops without a mail app.</li>
+        <li>The Karaoke page has no route to book or inquire from the room photos themselves.</li></ul></div>
+      <div class="card"><h3>Why a visual overhaul, not a patch</h3>
+        <p>Fixing these means rebuilding how pages are put together: real image files, proper headings, per-page titles and a real menu page. Doing that inside the current layout would preserve the thing that makes the site feel generic. Rebuilding lets us fix the plumbing and bring the design up to the level of the venue in one pass.</p></div>
+    </div>
+  </section>
+
   <section>
     <h2>What changed in the concept</h2>
     <p class="sub">Eight things we found on the live site, and how the concept handles each.</p>
@@ -85,7 +108,7 @@ code{font:400 13px var(--f-m);background:#efe6d8;padding:1px 5px}
 
     <div class="fix"><span class="n">08</span><h3>Layout</h3>
       <p class="b">Every section is a centered heading over a narrow column of text, repeated down the page.</p>
-      <p class="a">Editorial grids that alternate full-bleed images with quieter type sections, set in Bodoni with Chinese characters used as texture, not decoration.</p></div>
+      <p class="a">Editorial grids that alternate full-bleed images with quieter type sections, set in Rewind's own Josefin Sans with a serif italic for accents.</p></div>
   </section>
 
   <section>
@@ -107,7 +130,7 @@ code{font:400 13px var(--f-m);background:#efe6d8;padding:1px 5px}
 
   <section>
     <h2>SEO recommendations</h2>
-    <p class="sub">Suggestions only. None of this is implemented in the concept; it's what we'd set up in the full build.</p>
+    <p class="sub">Suggestions only. None of this is built into the demo; it's what we'd set up in the full build.</p>
     <ul class="terms">
       <li>private karaoke NYC</li><li>private karaoke Long Island City</li><li>corporate event space Long Island City</li>
       <li>private event venue NYC</li><li>karaoke party NYC</li><li>karaoke room Queens</li>
@@ -115,9 +138,9 @@ code{font:400 13px var(--f-m);background:#efe6d8;padding:1px 5px}
     <div class="cols">
       <div class="card"><h3>On-page</h3><ul>
         <li>A dedicated, indexable <code>/private-events</code> page with an H1 aimed at corporate buyouts in Long Island City</li>
-        <li>Clean H1/H2 structure on Karaoke and Lounge (headings are mostly generic today: "The Vision", "Karaoke Rooms")</li>
-        <li>Alt text on every photo. Many images on the live site have empty alt text.</li>
-        <li>A unique title and meta description per page, written for click-through</li>
+        <li>One H1 per page (there are none today), with a clean H2 structure under it</li>
+        <li>Descriptive alt text on every photo, starting with the rooms and dishes</li>
+        <li>A unique title and meta description per page (today all pages share one)</li>
         <li>Internal links between Karaoke, Private Events and the menu</li>
         <li>Publish the menu as a real page instead of a Canva link. Search engines can't read it today, and dish names like "wagyu don" and "egg sando" are things people search for near Long Island City.</li></ul></div>
       <div class="card"><h3>Structured data &amp; local</h3><ul>
